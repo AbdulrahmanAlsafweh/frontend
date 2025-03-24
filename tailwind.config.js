@@ -21,6 +21,7 @@ module.exports = {
         Secondary: ["Montserrat", "sans-serif"],
         Raleway : ["Raleway",  ],
       },
+      
       //   backgroundImage: {
       //     bg: "url('./assets/banner.png')",
       //     trex: "url('./assets/main-character1.png')",

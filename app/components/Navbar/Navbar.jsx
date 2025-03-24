@@ -12,7 +12,7 @@ export default function Navbar() {
   const navigationLinks = [
     { name: "Home", path: "/" },
     { name: "Our Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
+    { name: "Brands", path: "/brands" },
     { name: "Blog", path: "/blog" },
     { name: "Call us", path: "/contactus" },
   ];
@@ -92,7 +92,8 @@ export default function Navbar() {
         )}
 
         {/* Page-Specific Headers with Breadcrumbs */}
-        {["/services", "/blog", "/contactus","/portfolio"].includes(location) && (
+        {["/services", "/blog", "/contactus", '/brands'
+        ].includes(location) && (
           <div className="md:px-14 md:pb-7 pt-14 pb-7 px-3 font-Main md:pt-24">
             <Breadcrumb
               separator=">"
