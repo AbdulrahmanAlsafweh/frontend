@@ -187,3 +187,29 @@ body {
     --y: 20px;
   }
 }
+
+
+
+/* style for drag and drop components  */
+/* In your CSS */
+.sortable-item {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .sortable-item.id-1 {
+    width: 40%;
+  }
+
+  .sortable-item.id-2 {
+    width: 25%;
+  }
+
+  .sortable-item.id-3 {
+    width: 35%;
+  }
+}
+
+.dragging {
+  width: 100% !important;
+}
