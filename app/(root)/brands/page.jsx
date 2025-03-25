@@ -2,21 +2,21 @@ import Link from "next/link";
 export default function BrandsPage() {
   const cards = [
     {
-      src: "Assets/Images/Brands/bg.jpg",
+      src: "/Assets/Images/Brands/bg.jpg",
       alt: "Brand 1",
       name: "Brand 1",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed euismod, turpis sed malesuada placerat, urna dui tristique ligula, sed ultricies ligula turpis in lectus. Donec sed mi a neque fermentum consectetur.",
     },
     {
-      src: "Assets/Images/Brands/bg.jpg",
+      src: "/Assets/Images/Brands/bg.jpg",
       alt: "Brand 2",
       name: "Brand 2",
       description:
         "Aliquam erat volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
     },
     {
-      src: "Assets/Images/Brands/bg.jpg",
+      src: "/Assets/Images/Brands/bg.jpg",
       alt: "Brand 3",
       name: "Brand 3",
       description:
@@ -25,7 +25,7 @@ export default function BrandsPage() {
   ];
 
   return (
-    <div className="md:mx-7 flex flex-col justify-center">
+    <div className="md:mx-7 flex flex-col justify-center mt-5">
       <div className="grid md:grid-cols-2 mx-auto gap-20">
         {cards.map((card, index) => (
           <Link href="/brands/nike" key={index}>
@@ -49,7 +49,7 @@ export default function BrandsPage() {
               {/* Icon Box */}
               <div className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] lg:w-[70px] lg:h-[70px] bg-secondary rounded-[18px] absolute bottom-3 right-3 z-30 flex items-center justify-center group-hover:scale-105 transition-all duration-75">
                 <img
-                  src="Assets/Images/Brands/arrow.png"
+                  src="/Assets/Images/Brands/arrow.png"
                   className="w-[28px]  h-[28px] sm:w-[34px] sm:h-[34px] lg:w-[38px] lg:h-[38px]"
                   alt="Arrow"
                 />

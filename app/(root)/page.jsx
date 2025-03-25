@@ -6,8 +6,8 @@ import DragAndDrop from '../components/DragAndDrop.jsx';
 export default function Home() {
   return (
     <div className="overflow-x-clip">
-      <OurClients />
       <DragAndDrop />
+      <OurClients />
       <Services />
       <WorkRoadMap />
     </div>

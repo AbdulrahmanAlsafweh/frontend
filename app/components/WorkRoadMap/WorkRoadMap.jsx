@@ -2,27 +2,27 @@ export default function WorkRoadMap() {
   const steps = [
     {
       title: "ANALYSIS",
-      image: "Assets/Images/Roadmap/SearchStatus.svg",
+      image: "/Assets/Images/Roadmap/SearchStatus.svg",
     },
     {
       title: "Determining the planning strategy",
-      image: "Assets/Images/Roadmap/Data.svg",
+      image: "/Assets/Images/Roadmap/Data.svg",
     },
     {
       title: "Designing - Programming",
-      image: "Assets/Images/Roadmap/Scroll.svg",
+      image: "/Assets/Images/Roadmap/Scroll.svg",
     },
     {
       title: "Upgrade And Maintenance",
-      image: "Assets/Images/Roadmap/Driver.svg",
+      image: "/Assets/Images/Roadmap/Driver.svg",
     },
     {
       title: "Releasing the final project",
-      image: "Assets/Images/Roadmap/Scroll.svg",
+      image: "/Assets/Images/Roadmap/Scroll.svg",
     },
     {
       title: "Release a prototype",
-      image: "Assets/Images/Roadmap/Scroll.svg",
+      image: "/Assets/Images/Roadmap/Scroll.svg",
     },
   ];
 

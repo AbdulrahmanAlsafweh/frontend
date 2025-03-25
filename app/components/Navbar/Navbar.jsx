@@ -22,14 +22,14 @@ export default function Navbar() {
   }
   , [location]);
   return (
-    <div className="flex flex-col px-3 py-3 md:px-7 md:py-7 relative">
+    <div className="flex flex-col px-3 pt-3 md:px-7 md:pt-7 relative">
       <div className="inverted-radius bg-[#D2D4FF] rounded-tl-3xl rounded-b-3xl">
         {/* Navbar Container */}
         <div className="flex flex-row  px-3 pt-3 items-center md:px-7 md:pt-7 justify-between">
           {/* NIC Logo */}
           <Link href="/">
             <img
-              src="Assets/Images/Logo.png"
+              src="/Assets/Images/Logo.png"
               alt="NIC LOGO"
               className="w-[150px]"
             />
@@ -74,7 +74,7 @@ export default function Navbar() {
         {/* Hero Section (Only on Home Page) */}
         {location === "/" && (
           <div className="flex flex-col-reverse md:flex-row">
-            <img src="Assets/Images/Navbar/hero_image.png" alt="Hero" />
+            <img src="/Assets/Images/Navbar/hero_image.png" alt="Hero" />
             <div className="flex flex-col md:gap-5 my-auto px-5 md:px-0 pt-10 md:pt-0 gap-5 items-center">
               <h2 className="font-bold font-Main w-fit text-[7vw] md:text-[3rem] relative md:leading-[4rem]">
                 Welcome to{" "}
@@ -118,7 +118,7 @@ export default function Navbar() {
       {/* Call Us with Icon (Desktop Only) */}
       <Link href={'#'} className="absolute md:right-[5rem] md:top-12 text-secondary hidden md:flex flex-row md:gap-2">
         <img
-          src="Assets/Images/Telephone.png"
+          src="/Assets/Images/Telephone.png"
           className="md:w-[24px]"
           alt="Call Us"
         />

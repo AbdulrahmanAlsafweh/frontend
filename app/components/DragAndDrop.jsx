@@ -52,10 +52,10 @@ function SortableItem({ id, number, isDragging }) {
       style={style}
       {...attributes}
       {...listeners}
-      className="overflow-hidden  hover:scale-95 transition-all"
+      className="overflow-hidden  hover:scale-95 transition-all "
     >
       {id === 1 ? (
-        <div className="bg-secondary justify-between md:px-10 md:py-10 rounded-3xl relative h-[320px] min-w-full   flex flex-col  ">
+        <div className="bg-secondary justify-between  px-10  py-10 rounded-3xl relative h-[320px] min-w-full   flex flex-col  ">
           <p>[About Us]</p>
           <div className="border-b-[1px] opacity-15  border-blackk absolute w-full left-0 top-[100px]  "></div>
 
@@ -80,7 +80,7 @@ function SortableItem({ id, number, isDragging }) {
           <div className="flex w-full flex-row  ">
             <p className="font-[16px] text-blackk">[Our Services]</p>
             <img
-              src="Assets/Images/DragAndDrop/arrow.png"
+              src="/Assets/Images/DragAndDrop/arrow.png"
               className="ml-auto"
               alt=""
             />
@@ -142,7 +142,10 @@ export default function SortableContainer() {
   };
 
   return (
-    <div style={{ maxWidth: "100%", overflowX: "auto" }} className="md:mx-7 ">
+    <div
+      style={{ maxWidth: "100%", overflowX: "auto" }}
+      className="md:mx-7  "
+    >
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
@@ -158,7 +161,6 @@ export default function SortableContainer() {
             {items.map((item) => (
               <SortableItem
                 key={item.id}
-                 
                 id={item.id}
                 number={item.number}
                 isDragging={false}

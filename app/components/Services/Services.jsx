@@ -4,30 +4,30 @@ export default function Services(){
   const services = [
     {
       title: "UI UX Design",
-      image: "Assets/Images/Services/ui_ux.png",
+      image: "/Assets/Images/Services/ui_ux.png",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate excepturi, vel libero illum nihil voluptate iste. Quasi quos dicta necessitatibus?",
     },
     {
       title: "Web Development",
-      image: "Assets/Images/Services/web_development.png",
+      image: "/Assets/Images/Services/web_development.png",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate excepturi, vel libero illum nihil voluptate iste. Quasi quos dicta necessitatibus?",
     },
     {
       title: "Mobile Application",
-      image: "Assets/Images/Services/mobile_development.png",
+      image: "/Assets/Images/Services/mobile_development.png",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate excepturi, vel libero illum nihil voluptate iste. Quasi quos dicta necessitatibus?",
     },
     {
       title: "Saas",
-      image: "Assets/Images/Services/saas.png",
+      image: "/Assets/Images/Services/saas.png",
       description:"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate excepturi, vel libero illum nihil voluptate iste. Quasi quos dicta necessitatibus?",
     },
     {
       title: "IT Support",
-      image: "Assets/Images/Services/it_support.png",
+      image: "/Assets/Images/Services/it_support.png",
       description:
         "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate excepturi, vel libero illum nihil voluptate iste. Quasi quos dicta necessitatibus?",
     },
@@ -65,7 +65,7 @@ export default function Services(){
               <div className="flex flex-col md:flex-row relative gap-5   md:mx-0 justify-between md:items-center group hover:ml-10 transition-all duration-500 delay-300 hover:cursor-pointer py-16   ">
                 <div className="flex flex-row gap-3 items-center    ">
                   <div className="flex justify-center items-center bg-white rounded-xl w-fit px-4 py-4 group-hover:bg-secondary transition-colors duration-500 delay-300">
-                    <img src="Assets/Images/Services/ui_ux.png" alt="" />
+                    <img src="/Assets/Images/Services/ui_ux.png" alt="" />
                   </div>
 
                   <p className="capitalize text-white md:text-2xl font-bold">
@@ -77,7 +77,7 @@ export default function Services(){
                   {service.description}
                 </p>
                 <img
-                  src="Assets/Images/Services/placeholder.png"
+                  src="/Assets/Images/Services/placeholder.png"
                   className="w-52 group-hover:opacity-100 hidden md:block  group-hover:rotate-45 opacity-0 transition-all delay-100 duration-500 group-hover:scale-150 "
                   alt=""
                 />

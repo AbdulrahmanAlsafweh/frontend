@@ -27,7 +27,7 @@ export default function Contactus() {
           <div className="flex-row flex gap-3">
             <div className="px-4 py-1 flex  justify-center bg-[#03001412] w-fit rounded-full  items-center">
               <img
-                src="Assets/Images/Contactus/call.png"
+                src="/Assets/Images/Contactus/call.png"
                 className="min-w-[20px] max-w-[20px]"
                 alt=""
               />
@@ -41,7 +41,7 @@ export default function Contactus() {
           <div className="flex-row flex gap-3">
             <div className="px-4 py-1 flex  justify-center bg-[#03001412] w-fit rounded-full  items-center">
               <img
-                src="Assets/Images/Contactus/call.png"
+                src="/Assets/Images/Contactus/call.png"
                 className="min-w-[20px] max-w-[20px]"
                 alt=""
               />
@@ -55,7 +55,7 @@ export default function Contactus() {
           <div className="flex-row flex gap-3">
             <div className="px-4 py-1 flex  justify-center bg-[#03001412] w-fit rounded-full  items-center">
               <img
-                src="Assets/Images/Contactus/call.png"
+                src="/Assets/Images/Contactus/call.png"
                 className="min-w-[20px] max-w-[20px]"
                 alt=""
               />
@@ -77,7 +77,7 @@ export default function Contactus() {
             <a href="">
               <div className="bg-secondary  hover:scale-105 transition-all duration-75 px-4 py-4 rounded-full flex justify-center items-center">
                 <img
-                  src="Assets/Images/Contactus/call.png"
+                  src="/Assets/Images/Contactus/call.png"
                   className="min-w-[20px] max-w-[20px]"
                 />
               </div>
@@ -85,7 +85,7 @@ export default function Contactus() {
             <a href="">
               <div className="bg-secondary  hover:scale-105 transition-all duration-75 px-4 py-4 rounded-full flex justify-center items-center">
                 <img
-                  src="Assets/Images/Contactus/call.png"
+                  src="/Assets/Images/Contactus/call.png"
                   className="min-w-[20px] max-w-[20px]"
                 />
               </div>
@@ -93,7 +93,7 @@ export default function Contactus() {
             <a href="">
               <div className="bg-secondary  hover:scale-105 transition-all duration-75 px-4 py-4 rounded-full flex justify-center items-center">
                 <img
-                  src="Assets/Images/Contactus/call.png"
+                  src="/Assets/Images/Contactus/call.png"
                   className="min-w-[20px] max-w-[20px]"
                 />
               </div>
@@ -101,7 +101,7 @@ export default function Contactus() {
             <a href="">
               <div className="bg-secondary  hover:scale-105 transition-all duration-75 px-4 py-4 rounded-full flex justify-center items-center">
                 <img
-                  src="Assets/Images/Contactus/call.png"
+                  src="/Assets/Images/Contactus/call.png"
                   className="min-w-[20px] max-w-[20px]"
                 />
               </div>
@@ -109,7 +109,7 @@ export default function Contactus() {
             <a href="">
               <div className="bg-secondary  hover:scale-105 transition-all duration-75 px-4 py-4 rounded-full flex justify-center items-center">
                 <img
-                  src="Assets/Images/Contactus/call.png"
+                  src="/Assets/Images/Contactus/call.png"
                   className="min-w-[20px] max-w-[20px]"
                 />
               </div>
@@ -135,7 +135,7 @@ export default function Contactus() {
       backdrop-blur-[22px]"
             >
               <img
-                src="Assets/Images/Contactus/call.png"
+                src="/Assets/Images/Contactus/call.png"
                 className="in-w-[24px] border-r-2 pr-3    border-gray-500"
                 alt=" call"
               />
@@ -156,7 +156,7 @@ export default function Contactus() {
       backdrop-blur-[22px]"
             >
               <img
-                src="Assets/Images/Contactus/call.png"
+                src="/Assets/Images/Contactus/call.png"
                 className="in-w-[24px] border-r-2 pr-3     border-gray-500"
                 alt=" call"
               />
@@ -177,7 +177,7 @@ export default function Contactus() {
       backdrop-blur-[22px]"
             >
               <img
-                src="Assets/Images/Contactus/call.png"
+                src="/Assets/Images/Contactus/call.png"
                 className="in-w-[24px] border-r-2 pr-3      border-gray-500"
                 alt=" call"
               />
@@ -215,7 +215,7 @@ export default function Contactus() {
               <button className="bg-[#03AC42] w-full md:w-fit items-center justify-center flex flex-row px-5 py-3  hover:scale-105 transition-all delay-100 cursor-pointer rounded-[10px]">
                 <p className="text-white ">Whatsapp</p>
                 <img
-                  src="Assets/Images/Contactus/right_arrow.png"
+                  src="/Assets/Images/Contactus/right_arrow.png"
                   className="w-[24px]"
                   alt=""
                 />

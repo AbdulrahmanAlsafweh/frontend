@@ -1,11 +1,11 @@
 export default function OurClients() {
   const ourClients = [
-    { src: "Assets/Images/OurClients/client_1.png" },
-    { src: "Assets/Images/OurClients/client_2.png" },
-    { src: "Assets/Images/OurClients/client_3.png" },
-    { src: "Assets/Images/OurClients/client_4.png" },
-    { src: "Assets/Images/OurClients/client_5.png" },
-    { src: "Assets/Images/OurClients/client_6.png" },
+    { src: "/Assets/Images/OurClients/client_1.png" },
+    { src: "/Assets/Images/OurClients/client_2.png" },
+    { src: "/Assets/Images/OurClients/client_3.png" },
+    { src: "/Assets/Images/OurClients/client_4.png" },
+    { src: "/Assets/Images/OurClients/client_5.png" },
+    { src: "/Assets/Images/OurClients/client_6.png" },
   ];
 
   return (

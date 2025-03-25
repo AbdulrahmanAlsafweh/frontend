@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Logo & Socials */}
           <div className="flex flex-col items-center md:items-start gap-5 md:gap-10">
             <img
-              src="Assets/Images/logo.png"
+              src="/Assets/Images/logo.png"
               alt="Logo"
               className="w-[200px] md:w-[300px]"
             />
@@ -19,7 +19,7 @@ export default function Footer() {
                   <Link href={"#"} className="flex items-center text-blackk font-Secondary gap-2">
                     <p>{platform}</p>
                     <img
-                      src="Assets/Images/Footer/top-right.png"
+                      src="/Assets/Images/Footer/top-right.png"
                       width={24}
                       alt=""
                     />
@@ -40,7 +40,7 @@ export default function Footer() {
           {/* QR Code */}
           <div>
             <img
-              src="Assets/Images/Footer/qr-code.png"
+              src="/Assets/Images/Footer/qr-code.png"
               alt="QR Code"
               className="w-24 md:w-auto"
             />
