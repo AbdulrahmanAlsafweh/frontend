@@ -34,7 +34,8 @@ export default function Services(){
     
   ]
     return (
-      <div className="flex flex-col  w-full md:px-16 md:py-16   relative">
+      <div className="flex flex-col  w-full md:px-16 md:py-16   relative"
+      key={'services'}>
         {/* <p className="text-[10rem] font-bold text-[#4D4650] ">
           <span className="text-secondary">W</span>
           <span className="bg-gradient-to-r from-secondary to-[#4D4650] text-transparent bg-clip-text">

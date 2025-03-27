@@ -9,7 +9,8 @@ export default function OurClients() {
   ];
 
   return (
-    <div className="flex md:px-7 md:py-7 relative flex-col md:gap-10 items-center">
+    <div className="flex md:px-7 md:py-7 relative flex-col md:gap-10 items-center"
+    key={'OurClients'}>
       <h3 className="font-bold font-Secondary w-fit md:text-[1.5rem] relative leading-[4rem] text-white mx-auto">
         Our Brands
       </h3>

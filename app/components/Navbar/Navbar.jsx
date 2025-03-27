@@ -22,7 +22,9 @@ export default function Navbar() {
   }
   , [location]);
   return (
-    <div className="flex flex-col px-3 pt-3 md:px-7 md:pt-7 relative">
+    <div className="flex flex-col px-3 pt-3 md:px-7 md:pt-7 relative"
+    
+    key={'Navbar'}>
       <div className="inverted-radius bg-[#D2D4FF] rounded-tl-3xl rounded-b-3xl">
         {/* Navbar Container */}
         <div className="flex flex-row  px-3 pt-3 items-center md:px-7 md:pt-7 justify-between">
@@ -125,10 +127,14 @@ export default function Navbar() {
         Call Us
       </Link>
       {/* Mobile Drawer Button */}
-      <MenuOutlined
-        className="md:hidden absolute bg-white px-5 py-5 rounded-3xl  right-[2rem]   text-2xl cursor-pointer"
-        onClick={() => setOpen(true)}
-      />
-    </div>
+     <div 
+  className="md:hidden absolute bg-white p-3 rounded-2xl right-[1.5rem] top-[1.3rem] cursor-pointer px-4 py-4 "
+  onClick={() => setOpen(true)}
+>
+  <div className="w-6 h-0.5 bg-black mb-1.5"></div>
+  <div className="w-6 h-0.5 bg-black mb-1.5"></div>
+  <div className="w-6 h-0.5 bg-black"></div>
+</div>
+</div>
   );
 }

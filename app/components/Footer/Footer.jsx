@@ -2,7 +2,9 @@
 import Link from "next/link";
 export default function Footer() {
   return (
-    <div className="flex bg-blackk px-5 py-7 md:px-7 md:py-7">
+    <div className="flex bg-blackk px-5 py-7 md:px-7 md:py-7"
+    
+    key={'Footer'}>
       <div className="flex flex-col bg-[#D2D4FF] w-full gap-7 md:gap-10 rounded-3xl px-7 py-10 md:px-20 md:py-16 font-Secondary">
         {/* Top Section - Logo, Socials, Contact, QR */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-7 md:gap-10">

@@ -31,7 +31,7 @@ function SortableItem({ id, number }) {
   };
 
   return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners} key={'draganddrop'} >
       {id === 1 ? (
         <div className="bg-secondary justify-between md:px-10 md:py-10 rounded-3xl relative md:h-[320px] md:w-570px flex flex-col  ">
           <p>[About Us]</p>

@@ -155,7 +155,7 @@ export default function SortableContainer() {
         {/* Horizontal Flexbox Container */}
         <SortableContext items={items} strategy={horizontalListSortingStrategy}>
           <div
-            style={{ display: "flex", gap: "10px", padding: "10px" }}
+            style={{ display: "flex", gap: "10px", marginTop: "15px"}}
             className="flex flex-col md:flex-row overflow-hidden"
           >
             {items.map((item) => (

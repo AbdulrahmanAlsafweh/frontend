@@ -2,6 +2,51 @@
 import { useRef, useState } from "react";
 
 export default function ServicesPage() {
+
+   const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(null);
+
+    try {
+      const response = await fetch("http://localhost:8080/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        console.log(data);
+        setSuccess("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSuccess("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setSuccess("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+
   const detaildServices = [
     {
       title: "Network Configuration",
@@ -198,9 +243,18 @@ export default function ServicesPage() {
       </div>
 
       {/* Programming Department Section */}
-      <div className="flex flex-col px-4 md:px-10">
-        <div className="grid grid-cols-[6rem_1fr] md:grid-cols-[10rem_1fr] text-white font-Secondary">
-          <p className="text-sm h-fit">[Coders Team]</p>
+      <div className="flex flex-col px-4 md:px-10 relative ">
+        {/* NIC Shape bg */}
+        <img
+          src="Assets/Images/Services/NIC.png"
+          className="absolute -top-16 md:-top-48 -left-5 md:-left-7"
+          alt=""
+        />
+        {/* White spotlight */}
+        <div className="absolute block md:block top-10 right-10 w-16 h-16 md:w-52 md:h-52 bg-white opacity-20 rounded-full blur-3xl"></div>
+
+        <div className="grid grid-cols-[1] md:grid-cols-[10rem_1fr] text-white font-Secondary z-10">
+          <p className="text-sm h-fit mb-5 md:mb-0">[Coders Team]</p>
           <div className="text-2xl md:text-4xl flex flex-col gap-6 md:gap-10">
             <p className="font-semibold text-2xl md:text-4xl font-Main">
               Programming <br /> Department
@@ -211,10 +265,17 @@ export default function ServicesPage() {
                   key={index}
                   className="flex gap-3 md:gap-5 flex-col group w-full md:w-3/4"
                 >
-                  <h2 className="group-hover:md:ml-10 w-fit group-hover:bg-gradient-to-r group-hover:from-secondary group-hover:to-primary group-hover:bg-clip-text group-hover:text-transparent text-white transition-all duration-500 text-lg md:text-xl">
+                  <h2
+                    className="w-fit 
+    md:text-black md:bg-none md:bg-clip-border md:text-current
+    bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent
+    md:group-hover:bg-gradient-to-r md:group-hover:from-secondary md:group-hover:to-primary md:group-hover:bg-clip-text md:group-hover:text-transparent 
+    transition-all duration-500 text-lg md:text-xl"
+                  >
                     {index + 1} / {service.title}
                   </h2>
-                  <p className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-sm md:text-base md:ml-10">
+
+                  <p className="md:opacity-0 opacity-100 md:group-hover:opacity-100 transition-opacity duration-500 text-sm md:text-base md:ml-10">
                     {service.description}
                   </p>
                   {index !== generalServices.length - 1 && (
@@ -227,12 +288,67 @@ export default function ServicesPage() {
         </div>
       </div>
 
+      {/* IT Department Section */}
+      <div className="flex flex-col bg-white w-full rounded-3xl mt-6 md:mt-10 overflow-hidden">
+        <div className=" flex flex-col md:flex-row gap-4 md:gap-10 font-Secondary uppercase px-4 md:px-10 py-6 md:py-16">
+          <p className="text-xs md:text-sm">[Uno Team]</p>
+          <h2 className="text-2xl md:text-4xl font-bold font-Main">
+            IT Department
+          </h2>
+        </div>
+        <div className="bg-whitee w-full flex flex-col pt-6 md:pt-10 gap-8 md:gap-32 rounded-t-3xl">
+          <div className="w-full overflow-hidden px-4 md:px-16">
+            <div
+              ref={scrollRef}
+              className="flex gap-3 md:gap-4 overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide cursor-pointer select-none"
+              onMouseDown={handleMouseDown}
+            >
+              {detaildServices.map((category, index) => (
+                <div
+                  onClick={() => setSelectedService(index)}
+                  key={index}
+                  className={`flex flex-row items-center justify-between rounded-full gap-3 md:gap-8 px-4 py-2 md:px-6 md:py-4 text-gray-800 font-medium text-base md:text-lg flex-shrink-0 w-fit ${
+                    selectedService === index ? "bg-white" : "bg-transparent"
+                  }`}
+                >
+                  <img
+                    className="w-6 h-6 md:w-auto md:h-auto"
+                    src={category.icon}
+                    draggable="false"
+                  />
+                  <p className="font-semibold">{category.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="px-4 md:px-0 pb-6 md:pb-0">
+            <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-0">
+              <div className="flex-1">
+                <img
+                  className="w-full h-auto"
+                  src={detaildServices[selectedService].img}
+                  alt=""
+                />
+              </div>
+              <div className="flex-1 my-auto flex flex-col justify-between gap-3 md:gap-5">
+                <h2 className="font-semibold text-2xl md:text-4xl">
+                  {detaildServices[selectedService].title}
+                </h2>
+                <p className="text-base md:text-xl leading-normal">
+                  {detaildServices[selectedService].content}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Contact Section */}
       <div className="flex flex-col md:flex-row gap-4 md:gap-5 mt-6 md:mt-10">
         {/* Contact Info */}
         <div className="flex-1 overflow-hidden bg-white flex-col px-6 py-8 md:px-16 md:py-32 rounded-3xl relative">
           <svg
-            className="absolute top-0 left-0 hidden md:block"
+            className="absolute top-0 left-0   md:block"
             viewBox="0 0 716 558"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -258,7 +374,7 @@ export default function ServicesPage() {
             </defs>
           </svg>
 
-          <div className="grid grid-cols-[80px_1fr] md:grid-cols-[100px_1fr] gap-6 md:gap-10">
+          <div className="grid grid-cols-[1] md:grid-cols-[100px_1fr] gap-6 md:gap-10">
             <div>
               <p className="uppercase text-sm md:text-base">[Call Us]</p>
             </div>
@@ -320,7 +436,10 @@ export default function ServicesPage() {
         </div>
 
         {/* Contact Form */}
-        <div className="flex-1 px-6 py-8 md:px-16 md:py-32 bg-white flex-col rounded-3xl relative">
+        <form
+          onSubmit={handleSubmit}
+          className="flex-1 px-6 py-8 md:px-16 md:py-32 bg-white flex-col rounded-3xl relative"
+        >
           <div className="flex justify-center w-full flex-col items-center gap-4 md:gap-5 font-Secondary">
             <div className="flex rounded-2xl bg-whitee justify-center gap-0 w-full px-4 py-2">
               <span className="border-r border-gray-400 py-3 pr-3 md:pr-5 flex">
@@ -332,8 +451,12 @@ export default function ServicesPage() {
               </span>
               <input
                 type="text"
+                name="name"
                 placeholder="Full Name"
                 className="outline-none px-3 bg-whitee w-full text-sm md:text-base"
+                value={formData.name}
+                onChange={handleChange}
+                required
               />
             </div>
 
@@ -347,8 +470,12 @@ export default function ServicesPage() {
               </span>
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
                 className="outline-none px-3 bg-whitee w-full text-sm md:text-base"
+                value={formData.email}
+                onChange={handleChange}
+                required
               />
             </div>
 
@@ -362,77 +489,37 @@ export default function ServicesPage() {
               </span>
               <input
                 type="text"
-                placeholder="Phone Number"
+                name="subject"
+                placeholder="Subject"
                 className="outline-none px-3 bg-whitee w-full text-sm md:text-base"
+                value={formData.subject}
+                onChange={handleChange}
+                required
               />
             </div>
 
             <div className="w-full">
               <textarea
+                name="message"
                 className="rounded-2xl w-full p-4 md:p-7 max-h-40 outline-none bg-whitee text-sm md:text-base"
-                placeholder="Your Text"
+                placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
+                required
               ></textarea>
             </div>
-            <button className="bg-secondary w-full px-6 py-3 md:px-10 md:py-5 rounded-2xl text-sm md:text-base">
-              Send
-            </button>
-          </div>
-        </div>
-      </div>
 
-      {/* IT Department Section */}
-      <div className="flex flex-col bg-white w-full rounded-3xl mt-6 md:mt-10 overflow-hidden">
-        <div className="flex flex-row gap-4 md:gap-10 font-Secondary uppercase px-4 md:px-10 py-6 md:py-16">
-          <p className="text-xs md:text-sm">[Uno Team]</p>
-          <h2 className="text-2xl md:text-4xl font-bold font-Main">
-            IT Department
-          </h2>
-        </div>
-        <div className="bg-whitee w-full flex flex-col pt-6 md:pt-10 gap-8 md:gap-32 rounded-t-3xl">
-          <div className="w-full overflow-hidden px-4 md:px-16">
-            <div
-              ref={scrollRef}
-              className="flex gap-3 md:gap-4 overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide cursor-pointer select-none"
-              onMouseDown={handleMouseDown}
+            <button
+              type="submit"
+              className="bg-secondary w-full px-6 py-3 md:px-10 md:py-5 rounded-2xl text-sm md:text-base"
+              disabled={loading}
             >
-              {detaildServices.map((category, index) => (
-                <div
-                  onClick={() => setSelectedService(index)}
-                  key={index}
-                  className={`flex flex-row items-center justify-between rounded-full gap-3 md:gap-8 px-4 py-2 md:px-6 md:py-4 text-gray-800 font-medium text-base md:text-lg flex-shrink-0 w-fit ${
-                    selectedService === index ? "bg-white" : "bg-transparent"
-                  }`}
-                >
-                  <img
-                    className="w-6 h-6 md:w-auto md:h-auto"
-                    src={category.icon}
-                    draggable="false"
-                  />
-                  <p className="font-semibold">{category.title}</p>
-                </div>
-              ))}
-            </div>
+              {loading ? "Sending..." : "Send"}
+            </button>
+
+            {success && <p className="text-center text-sm mt-2">{success}</p>}
           </div>
-          <div className="px-4 md:px-0 pb-6 md:pb-0">
-            <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-0">
-              <div className="flex-1">
-                <img
-                  className="w-full h-auto"
-                  src={detaildServices[selectedService].img}
-                  alt=""
-                />
-              </div>
-              <div className="flex-1 my-auto flex flex-col justify-between gap-3 md:gap-5">
-                <h2 className="font-semibold text-2xl md:text-4xl">
-                  {detaildServices[selectedService].title}
-                </h2>
-                <p className="text-base md:text-xl leading-normal">
-                  {detaildServices[selectedService].content}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );
