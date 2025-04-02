@@ -1,34 +1,54 @@
-
+'use client'
+import {useState, useEffect } from "react"
+import Link from "next/link";
 export default function BlogPage(){
-    const blogs = [
-      {
-        id: 1,
-        title:
-          "Digital Agency Solutions: How to Maximize Your Local Campaigns With Performance CTV",
-        description:
-          "Digital Agency Solutions: How to Maximize Your Local Campaigns With Performance CTV",
-        date: "2021-09-01",
-        image: "https://placehold.co/400",
-        content: "blog 1 content",
-      },
-      {
-        id: 2,
-        title: "Linear and Streaming: The Evolution of Television Advertising ",
-        description:
-          "Linear and Streaming: The Evolution of Television Advertising",
-        date: "2021-09-01",
-        image: "https://placehold.co/400",
-        content: "blog 1 content",
-      },
-      {
-        id: 3,
-        title: "5 Media Activation Tips for CPG & Retail Marketers",
-        description: "Blog 3 description",
-        date: "2021-09-01",
-        image: "https://placehold.co/400",
-        content: "blog 1 content",
-      },
-    ];
+
+  const [blogs,setBlogs] = useState([]);
+
+  useEffect(() => {
+    async function getBlgos (){
+      const res = await fetch('http://localhost:8080/api/blogs');
+      const data = await res.json();
+      setBlogs(data);
+      console.log(data);
+    }
+    getBlgos();
+  }, []);
+
+    const formatDate = (date) => {
+      const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+      return new Date(date).toLocaleDateString(undefined, options);
+    };
+
+    // const blogs = [
+    //   {
+    //     id: 1,
+    //     title:
+    //       "Digital Agency Solutions: How to Maximize Your Local Campaigns With Performance CTV",
+    //     description:
+    //       "Digital Agency Solutions: How to Maximize Your Local Campaigns With Performance CTV",
+    //     date: "2021-09-01",
+    //     image: "https://placehold.co/400",
+    //     content: "blog 1 content",
+    //   },
+    //   {
+    //     id: 2,
+    //     title: "Linear and Streaming: The Evolution of Television Advertising ",
+    //     description:
+    //       "Linear and Streaming: The Evolution of Television Advertising",
+    //     date: "2021-09-01",
+    //     image: "https://placehold.co/400",
+    //     content: "blog 1 content",
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "5 Media Activation Tips for CPG & Retail Marketers",
+    //     description: "Blog 3 description",
+    //     date: "2021-09-01",
+    //     image: "https://placehold.co/400",
+    //     content: "blog 1 content",
+    //   },
+    // ];
     return (
       <div className="md:mx-7 mx-5 my-5 md:my-7 relative flex flex-col ">
         <div className="grid md:grid-cols-3 grid-cols-1 gap-4 ">
@@ -39,11 +59,11 @@ export default function BlogPage(){
             >
               <div className="relative h-[300px]">
                 <div className="inverted-radius-blogs ">
-                  <img src={blog.image} className="max-h-[300px] object-cover w-full" alt="" />
+                  <img src={`/Assets/Images/uploads/${blog.image}`} className="max-h-[300px] object-cover w-full" alt="" />
                 </div>
                 <div className="absolute bottom-2 left-2 z-10 text-[#717171] p-2 flex flex-row items-center gap-3">
                   <img src="/Assets/Images/Blogs/date.png" alt="" />
-                  <p className="text-[14px] font-Raleway">{blog.date}</p>
+                  <p className="text-[14px] font-Raleway">{formatDate(blog.created_at.date)}</p>
                 </div>
               </div>
               <div>

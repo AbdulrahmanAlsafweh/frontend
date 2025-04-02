@@ -9,6 +9,7 @@ export default function Navbar() {
   const location = usePathname();
   const [open, setOpen] = useState(false); // State to control drawer visibility
 
+  // Navigation links
   const navigationLinks = [
     { name: "Home", path: "/" },
     { name: "Our Services", path: "/services" },
@@ -16,16 +17,29 @@ export default function Navbar() {
     { name: "Blog", path: "/blog" },
     { name: "Call us", path: "/contactus" },
   ];
-
+  // Paths that should have rounded bottom corners
+  const navigationLinksPath = 
+    ["/", "/services", "/blog", "/brands", "/contactus"];
+  
   useEffect(() => {
     console.log("navigation links",location);
   }
   , [location]);
   return (
-    <div className="flex flex-col px-3 pt-3 md:px-7 md:pt-7 relative"
-    
-    key={'Navbar'}>
-      <div className="inverted-radius bg-[#D2D4FF] rounded-tl-3xl rounded-b-3xl">
+    <div
+      className="flex flex-col px-3 pt-3 md:px-7 md:pt-7 relative"
+      key={"Navbar"}
+    >
+      <div
+        className={`inverted-radius bg-[#D2D4FF] rounded-tl-3xl ${
+          location == "/" ? "pb-0" : "pb-7 md:pb-3"
+        } ${
+          navigationLinksPath.includes(location)
+            ? "rounded-b-3xl"
+            : "rounded-b-0"
+        }
+ `}
+      >
         {/* Navbar Container */}
         <div className="flex flex-row  px-3 pt-3 items-center md:px-7 md:pt-7 justify-between">
           {/* NIC Logo */}
@@ -40,7 +54,7 @@ export default function Navbar() {
           {/* Desktop Navigation Links */}
           <ul className="md:flex hidden flex-row md:gap-5 font-Secondary mx-auto">
             {navigationLinks.map((item) => (
-              <Link  key={item.path} href={item.path}>
+              <Link key={item.path} href={item.path}>
                 <li
                   className={`border-0 transition-all ${
                     location === item.path
@@ -94,8 +108,7 @@ export default function Navbar() {
         )}
 
         {/* Page-Specific Headers with Breadcrumbs */}
-        {["/services", "/blog", "/contactus", '/brands'
-        ].includes(location) && (
+        {["/services", "/blog", "/contactus", "/brands"].includes(location) && (
           <div className="md:px-14 md:pb-7 pt-14 pb-7 px-3 font-Main md:pt-24">
             <Breadcrumb
               separator=">"
@@ -118,7 +131,10 @@ export default function Navbar() {
       </div>
 
       {/* Call Us with Icon (Desktop Only) */}
-      <Link href={'#'} className="absolute md:right-[5rem] md:top-12 text-secondary hidden md:flex flex-row md:gap-2">
+      <Link
+        href={"#"}
+        className="absolute md:right-[5rem] md:top-12 text-secondary hidden md:flex flex-row md:gap-2"
+      >
         <img
           src="/Assets/Images/Telephone.png"
           className="md:w-[24px]"
@@ -127,14 +143,14 @@ export default function Navbar() {
         Call Us
       </Link>
       {/* Mobile Drawer Button */}
-     <div 
-  className="md:hidden absolute bg-white p-3 rounded-2xl right-[1.5rem] top-[1.3rem] cursor-pointer px-4 py-4 "
-  onClick={() => setOpen(true)}
->
-  <div className="w-6 h-0.5 bg-black mb-1.5"></div>
-  <div className="w-6 h-0.5 bg-black mb-1.5"></div>
-  <div className="w-6 h-0.5 bg-black"></div>
-</div>
-</div>
+      <div
+        className="md:hidden absolute bg-white p-3 rounded-2xl right-[1.5rem] top-[1.3rem] cursor-pointer px-4 py-4 "
+        onClick={() => setOpen(true)}
+      >
+        <div className="w-6 h-0.5 bg-black mb-1.5"></div>
+        <div className="w-6 h-0.5 bg-black mb-1.5"></div>
+        <div className="w-6 h-0.5 bg-black"></div>
+      </div>
+    </div>
   );
 }

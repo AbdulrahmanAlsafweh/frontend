@@ -43,13 +43,18 @@ export default function CategoriesPage() {
   const handleUpdate = async (e) => {
     e.preventDefault();
 
+
     const response = await fetch(`http://localhost:8080/api/blogcategories/${editingCategory}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ category_name: categoryName }),
-    });
+    }
+    
+    );  
+    
+    console.log(response);
 
     if (response.ok) {
       setCategories(
@@ -66,59 +71,63 @@ export default function CategoriesPage() {
   };
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-semibold text-center mb-6">Categories Management</h1>
+
+ 
+    <div className="p-8 max-w-6xl mx-auto bg-white rounded-lg shadow-lg">
+      <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">Categories Management</h1>
 
       {message && (
-        <p className="text-center text-lg text-green-500 mb-4">
-          {message}
-        </p>
+        <p className="text-center text-lg text-green-600 mb-6">{message}</p>
       )}
 
-      <table className="min-w-full table-auto border-collapse">
-        <thead>
-          <tr className="bg-blue-600 text-white">
-            <th className="py-2 px-4 text-left">Category Name</th>
-            <th className="py-2 px-4 text-left">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {categories.map((category) => (
-            <tr key={category.id} className="border-b border-gray-200">
-              <td className="py-2 px-4">{category.category_name}</td>
-              <td className="py-2 px-4 flex space-x-2">
-                <button
-                  className="text-blue-500 hover:text-blue-700"
-                  onClick={() => handleEdit(category)}
-                >
-                  <FaEdit />
-                </button>
-                <button
-                  className="text-red-500 hover:text-red-700"
-                  onClick={() => handleDelete(category.id)}
-                >
-                  <FaTrash />
-                </button>
-              </td>
+      <div className="overflow-x-auto bg-gray-50 rounded-lg shadow-sm">
+        <table className="min-w-full table-auto">
+          <thead>
+            <tr className="bg-blue-700 text-white">
+              <th className="py-3 px-6 text-left text-sm font-medium">Category Name</th>
+              <th className="py-3 px-6 text-left text-sm font-medium">Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {categories.map((category) => (
+              <tr key={category.id} className="border-b border-gray-200 hover:bg-gray-100">
+                <td className="py-4 px-6 text-sm text-gray-700">{category.category_name}</td>
+                <td className="py-4 px-6 text-sm">
+                  <div className="flex space-x-4 justify-center">
+                    <button
+                      className="text-blue-600 hover:text-blue-800"
+                      onClick={() => handleEdit(category)}
+                    >
+                      <FaEdit className="text-lg" />
+                    </button>
+                    <button
+                      className="text-red-600 hover:text-red-800"
+                      onClick={() => handleDelete(category.id)}
+                    >
+                      <FaTrash className="text-lg" />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       {editingCategory && (
-        <div className="mt-6 p-4 bg-white shadow-lg rounded-lg">
-          <h2 className="text-xl font-semibold mb-4">Edit Category</h2>
+        <div className="mt-8 p-6 bg-white shadow-xl rounded-lg max-w-md mx-auto">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-5">Edit Category</h2>
           <form onSubmit={handleUpdate}>
             <input
               type="text"
               value={categoryName}
               onChange={(e) => setCategoryName(e.target.value)}
-              className="w-full p-2 border rounded-md mb-4"
+              className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-5"
               required
             />
             <button
               type="submit"
-              className="w-full p-2 bg-blue-600 text-white rounded-md"
+              className="w-full p-3 bg-blue-700 text-white font-semibold rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               Update Category
             </button>
@@ -128,3 +137,4 @@ export default function CategoriesPage() {
     </div>
   );
 }
+

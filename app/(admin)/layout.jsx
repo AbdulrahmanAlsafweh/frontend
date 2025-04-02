@@ -1,19 +1,20 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import "../globals.css";
 
 export default function AdminLayout({ children }) {
   const router = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  useEffect(() => {
-    const token = localStorage.getItem("adminToken");
-    if (!token) {
-      router.push("/login");
-    } else {
-      setIsAuthenticated(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("adminToken");
+  //   if (!token) {
+  //     router.push("/login");
+  //   } else {
+  //     setIsAuthenticated(true);
+  //   }
+  // }, []);
 
  
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function BrandDetails() {
   return (
     <div className="md:mx-7 mx-3">
-      <div className="md:px-14 md:pb-7 pt-14 pb-7 px-3 font-Main md:pt-24 bg-[#D2D4FF] "key={'BrandDetails'}>
+      <div className="md:px-14 md:pb-7 pt-14 pb-7 px-3 font-Main md:pt-24 rounded-b-3xl bg-[#D2D4FF]   mb-7 "key={'BrandDetails'}>
         <Breadcrumb
           separator=">"
           items={[

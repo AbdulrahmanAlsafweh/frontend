@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   DndContext,
   closestCenter,
@@ -21,20 +21,42 @@ import { CSS } from "@dnd-kit/utilities";
 import { Scale } from "lucide-react";
 
 function SortableItem({ id, number, isDragging }) {
+
+  
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id });
 
-  const maxWidth = isDragging
-    ? "100%"
-    : window.innerWidth < 768
-    ? "100%"
-    : id === 1
-    ? "40%"
-    : id === 2
-    ? "25%"
-    : id === 3
-    ? "35%"
-    : "auto";
+    const [maxWidth, setMaxWidth] = useState("auto");
+
+useEffect(() => {
+  if (typeof window !== "undefined") {
+    setMaxWidth(
+      isDragging
+        ? "100%"
+        : window.innerWidth < 768
+        ? "100%"
+        : id === 1
+        ? "40%"
+        : id === 2
+        ? "25%"
+        : id === 3
+        ? "35%"
+        : "auto"
+    );
+  }
+}, [isDragging, id]); // Runs whenever `isDragging` or `id` changes
+
+  // const maxWidth = isDragging
+  //   ? "100%"
+  //   : window.innerWidth < 768
+  //   ? "100%"
+  //   : id === 1
+  //   ? "40%"
+  //   : id === 2
+  //   ? "25%"
+  //   : id === 3
+  //   ? "35%"
+  //   : "auto";
 
   const style = {
     transform: CSS.Transform.toString(transform),
