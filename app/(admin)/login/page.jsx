@@ -1,6 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
+
 import axios from "axios";
 
 export default function AdminLogin() {
@@ -9,6 +10,15 @@ export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+
+   useEffect(() => {
+    const token = localStorage.getItem("adminToken");
+    if (token) {
+      router.push("/admin");
+    }
+  }, []);
+
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -21,13 +31,14 @@ export default function AdminLogin() {
       console.log(response);
       if (response.data.token) {
         localStorage.setItem("adminToken", response.data.token);
-        router.push("/admin/dashboard");
+        router.push("/admin");
       }
     } catch (err) {
       setError("Invalid email or password");
     }
   };
 
+ 
   return (
     <div className="flex min-h-screen items-center justify-center">
       <form
