@@ -33,6 +33,7 @@ export default function AddBlogPage() {
     formData.append("title", title);
     formData.append("content", content);
     formData.append("category_id", category);
+    formData.append("author",localStorage.getItem("adminUser"));
     if (image) formData.append("image", image);
     
     try {

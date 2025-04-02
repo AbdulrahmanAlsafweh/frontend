@@ -11,14 +11,15 @@ export default function AdminLogin() {
   const [error, setError] = useState("");
 
 
-   useEffect(() => {
+  useEffect(() => {
     const token = localStorage.getItem("adminToken");
     if (token) {
       router.push("/admin");
+      window.location.reload();
     }
   }, []);
 
-  
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -31,7 +32,9 @@ export default function AdminLogin() {
       console.log(response);
       if (response.data.token) {
         localStorage.setItem("adminToken", response.data.token);
+        localStorage.setItem("adminUser", response.data.username);
         router.push("/admin");
+        window.location.reload();
       }
     } catch (err) {
       setError("Invalid email or password");

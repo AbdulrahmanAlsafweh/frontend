@@ -1,18 +1,13 @@
 'use client'
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
 
 export default function AdminPage() {
-  const router = usePathname();
 
-  useEffect(() => {
-    const checkAuth = async () => {
-      const response = await fetch("/api/auth/check"); // Call CodeIgniter's API
-      const data = await response.json();
-      if (!data.authenticated) router.push("/login");
-    };
-    checkAuth();
-  }, [router]);
-
-  return <div>Admin Dashboard</div>;
+  return (
+    <div className="flex min-h-screen items-center justify-center">
+      <h1 className="text-2xl font-bold">Admin Dashboard</h1>
+      {/* Add your admin dashboard content here */}
+      
+    </div>
+);
 }

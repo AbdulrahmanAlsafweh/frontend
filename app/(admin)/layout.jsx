@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../globals.css";
-
+import AdminNavbar from "../components/AdminNavbar/page";
 export default function AdminLayout({ children }) {
   const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -14,14 +14,17 @@ export default function AdminLayout({ children }) {
     } else {
       setIsAuthenticated(true);
     }
-  }, []);
+  }, [isAuthenticated]);
 
  
 
   return (
     <html lang="en">
       <body>
-        <div>{children}</div>
+        <>
+          {isAuthenticated && <AdminNavbar />}
+          <div>{children}</div>
+        </>
       </body>
     </html>
   );

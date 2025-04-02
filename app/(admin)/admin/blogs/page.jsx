@@ -41,7 +41,7 @@ export default function BlogsPage(){
                 <div key={blog.id} className="border-b pb-4 mb-4">
                   <h2 className="text-2xl font-semibold">
                     <Link
-                      href={`/blogs/${blog.id}`}
+                      href={`/admin/blogs/${blog.id}`}
                       className="text-blue-600 hover:underline"
                     >
                       {blog.title}

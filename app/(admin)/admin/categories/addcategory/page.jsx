@@ -36,7 +36,7 @@ export default function AddBlogCategoryPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 p-6">
+    <div className="flex items-center justify-center min-h-screen    ">
       <div className="bg-white/10 backdrop-blur-lg border border-white/20 shadow-lg rounded-xl p-6 w-full max-w-md text-white">
         <h1 className="text-2xl font-semibold text-center mb-5">
           Add Blog Category
