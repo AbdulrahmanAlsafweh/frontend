@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../globals.css";
-import AdminNavbar from "../components/AdminNavbar/page";
+import AdminNavbar from "../components/AdminNavbar/navbar";
 export default function AdminLayout({ children }) {
   const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
