@@ -10,7 +10,7 @@ export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   useEffect(() => {
     const token = localStorage.getItem("adminToken");
     if (token) {
@@ -25,7 +25,7 @@ export default function AdminLogin() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:8080/api/login", {
+      const response = await axios.post(`${apiUrl}/api/login`, {
         email,
         password,
       });

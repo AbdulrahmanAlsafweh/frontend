@@ -11,10 +11,10 @@ export default function AddBlogPage() {
   const [category, setCategory] = useState("");
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   useEffect(() => {
     async function getBlogCategories() {
-      const res = await fetch("http://localhost:8080/api/blogcategories");
+      const res = await fetch(`${apiUrl}/api/blogcategories`);
       const data = await res.json();
       setBlogCategories(data);
     }
@@ -37,7 +37,7 @@ export default function AddBlogPage() {
     if (image) formData.append("image", image);
     
     try {
-      const res = await fetch("http://localhost:8080/api/blogs", {
+      const res = await fetch(`${apiUrl}/api/blogs`, {
         method: "POST",
         body: formData,
       });

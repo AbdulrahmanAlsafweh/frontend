@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Loading from "./BrandBlogSkeleton"
 export default function BrandsPage() {
   const cards = [
     {
@@ -25,6 +26,13 @@ export default function BrandsPage() {
   ];
 
   return (
+
+    // <div className="md:mx-7 flex flex-col justify-center mt-5">
+    //    <div className="grid md:grid-cols-2 mx-auto  gap-5 md:gap-20">
+    //   <Loading />
+    //   <Loading />
+    //    </div>
+    // </div>
     <div className="md:mx-7 flex flex-col justify-center mt-5" key={'brands'}>
       <div className="grid md:grid-cols-2 mx-auto gap-20">
         {cards.map((card, index) => (

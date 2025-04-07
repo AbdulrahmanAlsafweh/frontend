@@ -227,7 +227,7 @@ body {
   --y: 5px;
   /* vertical offset (no percentage) */
   
-  background: #3FB8AF;
+  background: #ffff;
   border-radius: var(--r);
   --_m: /calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%, #0000 72%);
   --_g: conic-gradient(from 180deg at var(--r) calc(100% - var(--r)), #0000 25%, #000 0);

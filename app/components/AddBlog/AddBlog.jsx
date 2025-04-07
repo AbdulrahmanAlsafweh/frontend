@@ -7,7 +7,7 @@ export default function AddBlog() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
@@ -15,7 +15,7 @@ export default function AddBlog() {
       formData.append("image", image);
     }
 
-    fetch("http://localhost:8080/blogs", {
+    fetch(`${apiUrl}/blogs`, {
       method: "POST",
       body: formData, // FormData automatically sets the right headers
     })

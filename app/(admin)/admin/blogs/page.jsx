@@ -7,11 +7,12 @@ export default function BlogsPage(){
   const [blogs, setBlogs] = useState([]);
   const [error, setError] = useState(null);
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   useEffect(() => {
     // Fetch blogs when the component mounts
     const fetchBlogs = async () => {
       try {
-        const res = await fetch('http://localhost:8080/api/blogs');
+        const res = await fetch(`${apiUrl}/api/blogs`);
         const data = await res.json();
         console.log(data);
         if (res.ok) {

@@ -11,7 +11,7 @@ export default function ServicesPage() {
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
-
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -22,7 +22,7 @@ export default function ServicesPage() {
     setSuccess(null);
 
     try {
-      const response = await fetch("http://localhost:8080/api/contact", {
+      const response = await fetch(`${apiUrl}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

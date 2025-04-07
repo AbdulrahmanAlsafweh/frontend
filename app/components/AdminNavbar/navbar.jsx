@@ -3,8 +3,11 @@ import { useRouter } from "next/navigation";
 
 export default function adminNavbar() {
   const router = useRouter();
+
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   const handleLogout = async () => {
-    const response = await fetch("http://localhost:8080/api/logout", {
+    const response = await fetch(`${apiUrl}/api/logout`, {
       method: "get",
     });
 

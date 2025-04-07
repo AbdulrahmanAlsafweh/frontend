@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 const BlogDetail = ({ params }) => {
   const [blog, setBlog] = useState(null);
   const [error, setError] = useState(null);
-
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   useEffect(() => {
     const fetchBlog = async () => {
       try {
         const res = await fetch(
-          `http://localhost:8080/api/blogs/${params.blogId}`
+          `${apiUrl}/api/blogs/${params.blogId}`
         );
         const data = await res.json();
 

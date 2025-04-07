@@ -62,7 +62,7 @@ export default function Services(){
         {services.map((service, index) => {
           
           return (
-            <div className="mx-3 md:mx-0 ">
+            <div className="mx-3 md:mx-0 " key={index}>
               <div className="flex flex-col md:flex-row relative gap-5   md:mx-0 justify-between md:items-center group hover:ml-10 transition-all duration-500 delay-300 hover:cursor-pointer py-16   ">
                 <div className="flex flex-row gap-3 items-center    ">
                   <div className="flex justify-center items-center bg-white rounded-xl w-fit px-4 py-4 group-hover:bg-secondary transition-colors duration-500 delay-300">

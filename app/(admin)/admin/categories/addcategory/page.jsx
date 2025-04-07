@@ -6,19 +6,27 @@ export default function AddBlogCategoryPage() {
   const [categoryName, setCategoryName] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setMessage("");
 
+    const sanitizedCategoryName = categoryName.trim();
+
+    if (!sanitizedCategoryName) {
+      setMessage("❌ Category name cannot be empty");
+      setLoading(false);
+      return;
+    }
+
     try {
-      const response = await fetch("http://localhost:8080/api/blogcategories", {
+      const response = await fetch(`${apiUrl}/api/blogcategories`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ category_name: categoryName }),
+        body: JSON.stringify({ category_name: sanitizedCategoryName }),
       });
 
       const data = await response.json();
@@ -26,7 +34,8 @@ export default function AddBlogCategoryPage() {
         setMessage("✅ Category added successfully!");
         setCategoryName("");
       } else {
-        setMessage("❌ " + (data.message || "Something went wrong"));
+        const errorMessage = data?.message || "Something went wrong";
+        setMessage(`❌ ${errorMessage}`);
       }
     } catch (error) {
       setMessage("❌ Failed to connect to server");

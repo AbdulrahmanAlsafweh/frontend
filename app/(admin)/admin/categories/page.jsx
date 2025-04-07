@@ -7,11 +7,11 @@ export default function CategoriesPage() {
   const [editingCategory, setEditingCategory] = useState(null);
   const [categoryName, setCategoryName] = useState("");
   const [message, setMessage] = useState("");
-
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   // Fetch all categories
   useEffect(() => {
     async function fetchCategories() {
-      const res = await fetch("http://localhost:8080/api/blogcategories");
+      const res = await fetch(`${apiUrl}/api/blogcategories`);
       const data = await res.json();
       setCategories(data);
     }
@@ -27,7 +27,7 @@ export default function CategoriesPage() {
 
   // Handle delete category
   const handleDelete = async (id) => {
-    const response = await fetch(`http://localhost:8080/api/blogcategories/${id}`, {
+    const response = await fetch(`${apiUrl}/api/blogcategories/${id}`, {
       method: "DELETE",
     });
 
@@ -44,7 +44,7 @@ export default function CategoriesPage() {
     e.preventDefault();
 
 
-    const response = await fetch(`http://localhost:8080/api/blogcategories/${editingCategory}`, {
+    const response = await fetch(`${apiUrl}/api/blogcategories/${editingCategory}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
