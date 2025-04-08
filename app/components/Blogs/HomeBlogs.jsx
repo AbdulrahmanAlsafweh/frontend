@@ -77,7 +77,7 @@ export default function HomeBlogs() {
 
   return (
     <div className="my-8 px-4 md:px-16 ">
-    <div className="flex md:flex-row gap-5 flex-col md:items-center justify-between  mb-7  ">
+    <div className="flex md:flex-row gap-5 flex-col md:items-center justify-between  md:mb-15 mb-7  ">
     <div className="flex flex-col">
     <p className="text-secondary font-Raleway uppercase font-[500] pb-3 text-sm">
         [Our Blog]
@@ -93,6 +93,7 @@ export default function HomeBlogs() {
     </Link>
     </div>
       {loading ? (
+
         <div className="flex gap-5 flex-wrap justify-center">
           <BlogCardSkeleton />
           <BlogCardSkeleton />

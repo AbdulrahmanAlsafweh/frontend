@@ -12,11 +12,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "NIC",
-  description: "NIC ",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

@@ -1,6 +1,8 @@
 "use client";
 import { useRef, useState } from "react";
 
+
+
 export default function ServicesPage() {
 
    const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ export default function ServicesPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(null);
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -44,6 +47,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       setLoading(false);
     }
   };
+
 
 
 
