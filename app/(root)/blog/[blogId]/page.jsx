@@ -1,14 +1,16 @@
-'use client'
+"use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Breadcrumb } from "antd";
 import Loading from "./loading";
 import Image from "next/image";
-import use from 'react'
+import use from "react";
+import axios from "axios";
 export default function BlogDetailsPage({ params }) {
   const { blogId } = params; // Unwrap the params object
   console.log(blogId);
   const [blogData, setBlogData] = useState(null);
+  const [recentBlogs, setRecentBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [shareUrl, setShareUrl] = useState("");
   useEffect(() => {
@@ -42,7 +44,16 @@ export default function BlogDetailsPage({ params }) {
     )}%20${encodeURIComponent(window.location.href)}`,
   };
 
-
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/api/recentCategories")
+      .then((res) => {
+        setRecentBlogs(res.data.recentBlogs);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch blogs", err);
+      });
+  }, []);
 
   return (
     <>
@@ -88,8 +99,33 @@ export default function BlogDetailsPage({ params }) {
               </div>
             </div>
             <div className="relative mx-auto">
-              <div className="relative min-h-[450px] w-[350px]">
-                <div className="inner-curve-blogs bg-white min-h-[450px] w-[350px] "></div>
+              <div className="relative min-h-[450px] w-[320px]">
+                <div className="inner-curve-blogs bg-white min-h-[450px] w-[320px] pt-20 pb-10 px-7 flex flex-col gap-5 ">
+                  
+                    {recentBlogs.map((blog) => {
+                      return (
+                        <Link href={`/blog/${blog.id}`} key={blog.id}>
+                          <div className="flex gap-5 items-center flex-row hover:scale-105 transition-all duration-75">
+                            <img
+                              src="/Assets/Images/Blogs/blog_placeholder.png"
+                              className="w-[100px] rounded-2xl"
+                              alt={blog?.title}
+                            />
+                            <div className="flex flex-col">
+                              <p className="text-[#8A8A8A] text-[12px] ">
+                                {formatDate(blog?.created_at?.date)}
+                              </p>
+
+                              <p className="text-blackk text-[12px] font-semibold">
+                                {blog?.title}
+                              </p>
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                   
+                </div>
                 <p className="absolute -translate-x-1/2 left-1/2 top-2 text-white font-Raleway text-[20px]">
                   Recent blogs
                 </p>

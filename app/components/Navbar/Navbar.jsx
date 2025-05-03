@@ -56,10 +56,10 @@ export default function Navbar() {
             {navigationLinks.map((item) => (
               <Link key={item.path} href={item.path}>
                 <li
-                  className={`border-0 transition-all ${
+                  className={`border-0 transition-all duration-75 ${
                     location === item.path
-                      ? "border-black border-b-2 opacity-100"
-                      : "opacity-50 hover:opacity-100 hover:border-black hover:border-b-2"
+                      ? "border-black border-b-2 opacity-100 duration-75"
+                      : "opacity-50 hover:opacity-100 hover:border-black duration-75 hover:border-b-2"
                   }`}
                 >
                   {item.name}
@@ -90,7 +90,11 @@ export default function Navbar() {
         {/* Hero Section (Only on Home Page) */}
         {location === "/" && (
           <div className="flex flex-col-reverse md:flex-row">
-            <img src="/Assets/Images/Navbar/hero_image.png" alt="Hero" className="select-none" />
+            <img
+              src="/Assets/Images/Navbar/hero_image.png"
+              alt="Hero"
+              className="select-none"
+            />
             <div className="flex flex-col md:gap-5 my-auto px-5 md:px-0 pt-10 md:pt-0 gap-5 items-center">
               <h2 className="font-bold font-Main w-fit text-[7vw] md:text-[3rem] relative md:leading-[4rem]">
                 Welcome to{" "}

@@ -8,7 +8,7 @@ export default function Loading(){
         <div className="md:px-14 mx-3 md:mx-7 md:pb-7 pt-14 pb-7 px-3 font-Main md:pt-24 rounded-b-3xl bg-[#D2D4FF] mb-7">
           <SkeletonInput active />
         </div>
-        <div className="grid md:grid-cols-[900px_1fr] grid-cols-1 gap-4 relative">
+        <div className="grid md:grid-cols-[900px_1fr] grid-cols-1 gap-4 relative   ">
           <div className="p-4 flex flex-col gap-20">
             <SkeletonImage
               active
