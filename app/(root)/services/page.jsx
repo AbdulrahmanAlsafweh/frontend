@@ -54,35 +54,35 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const detaildServices = [
     {
       title: "Network Configuration",
-      img: "/Assets/Images/Services/server_bro.png",
+      img: "/Assets/Images/Services/Server_bro.png",
       icon: "/Assets/Images/Services/data.png",
       content:
         "Website design and developmentOur skilled developers create visually stunning, user-friendly websites tailored to your business objectives. We leverage the latest technologies and best practices to ensure your website stands out and delivers a seamless user experience.",
     },
     {
       title: "Security Solutions",
-      img: "/Assets/Images/Services/server_bro.png",
+      img: "/Assets/Images/Services/Server_bro.png",
       icon: "/Assets/Images/Services/security_solutions.png",
       content:
         "Website design and developmentOur skilled developers create visually stunning, user-friendly websites tailored to your business objectives. We leverage the latest technologies and best practices to ensure your website stands out and delivers a seamless user experience.",
     },
     {
       title: "Maintenance",
-      img: "/Assets/Images/Services/server_bro.png",
+      img: "/Assets/Images/Services/Server_bro.png",
       icon: "/Assets/Images/Services/gear.png",
       content:
         "Website design and developmentOur skilled developers create visually stunning, user-friendly websites tailored to your business objectives. We leverage the latest technologies and best practices to ensure your website stands out and delivers a seamless user experience.",
     },
     {
       title: "Backup Solutions",
-      img: "/Assets/Images/Services/server_bro.png",
+      img: "/Assets/Images/Services/Server_bro.png",
       icon: "/Assets/Images/Services/driver.png",
       content:
         "Website design and developmentOur skilled developers create visually stunning, user-friendly websites tailored to your business objectives. We leverage the latest technologies and best practices to ensure your website stands out and delivers a seamless user experience.",
     },
     {
       title: "IT Infrustructure",
-      img: "/Assets/Images/Services/server_bro.png",
+      img: "/Assets/Images/Services/Server_bro.png",
       icon: "/Assets/Images/Services/it.png",
       content:
         "Website design and developmentOur skilled developers create visually stunning, user-friendly websites tailored to your business objectives. We leverage the latest technologies and best practices to ensure your website stands out and delivers a seamless user experience.",
@@ -257,6 +257,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
         {/* White spotlight */}
         <div className="absolute block md:block top-10 right-10 w-16 h-16 md:w-52 md:h-52 bg-white opacity-20 rounded-full blur-3xl"></div>
 
+        {/* the grid  */}
         {/* <div className="grid grid-cols-[1] md:grid-cols-[10rem_1fr] text-white font-Secondary z-10">
           <p className="text-sm h-fit mb-5 md:mb-0">[Coders Team]</p>
           <div className="text-2xl md:text-4xl flex flex-col gap-6 md:gap-10">
@@ -416,11 +417,73 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
             </defs>
           </svg>
 
-          <div className="grid grid-cols-[1] md:grid-cols-[100px_1fr] gap-6 md:gap-10">
+                the old grid
+          {/* <div className="grid grid-cols-[1] md:grid-cols-[100px_1fr] gap-6 md:gap-10">
+          
             <div>
               <p className="uppercase text-sm md:text-base">[Call Us]</p>
             </div>
             <div className="flex flex-col gap-6 md:gap-10">
+              <p className="font-Main font-bold uppercase text-2xl md:text-[3rem]">
+                Let's Work <br /> With us
+              </p>
+              <ul className="flex flex-col gap-4 md:gap-5">
+                <li className="flex flex-row items-center gap-3">
+                  <div className="flex items-center justify-center p-2 md:px-2 md:py-2 rounded-full bg-secondary">
+                    <img
+                      className="w-4 h-4 md:w-auto md:h-auto"
+                      src="/Assets/Images/Services/telephone.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm md:text-base">Tel</p>
+                    <p className="font-semibold text-base md:text-[1.2rem]">
+                      310-437-2766
+                    </p>
+                  </div>
+                </li>
+
+                <li className="flex flex-row items-center gap-3">
+                  <div className="flex items-center justify-center p-2 md:px-2 md:py-2 rounded-full bg-secondary">
+                    <img
+                      className="w-4 h-4 md:w-auto md:h-auto"
+                      src="/Assets/Images/Services/sms.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm md:text-base">Mail</p>
+                    <p className="font-semibold text-base md:text-[1.2rem]">
+                      unreal@outlook.com
+                    </p>
+                  </div>
+                </li>
+
+                <li className="flex flex-row items-center gap-3">
+                  <div className="flex items-center justify-center p-2 md:px-2 md:py-2 rounded-full bg-secondary">
+                    <img
+                      className="w-4 h-4 md:w-auto md:h-auto"
+                      src="/Assets/Images/Services/location.png"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm md:text-base">Address</p>
+                    <p className="font-semibold text-base md:text-[1.2rem]">
+                      706 Campfire Ave. Meriden, CT 06450
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div> */}
+
+          <div className="flex flex-col md:flex-row gap-6 md:gap-10">
+            <div className="md:w-[100px]">
+              <p className="uppercase text-sm md:text-base">[Call Us]</p>
+            </div>
+            <div className="flex flex-col gap-6 md:gap-10 flex-1">
               <p className="font-Main font-bold uppercase text-2xl md:text-[3rem]">
                 Let's Work <br /> With us
               </p>
