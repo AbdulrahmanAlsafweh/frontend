@@ -21,7 +21,7 @@ export default function BlogPage() {
   // Fetch categories
   useEffect(() => {
     async function fetchCategories() {
-      const res = await fetch(`http://api.nicgroup.co/api/blogcategories`);
+      const res = await fetch(`https://api.nicgroup.co/api/blogcategories`);
       const data = await res.json();
       setCategories(data);
     }
@@ -36,7 +36,7 @@ export default function BlogPage() {
         ? `&category_id=${selectedCategories.join(",")}`
         : "";
       const res = await fetch(
-        `http://api.nicgroup.co/api/blogs?page=${currentPage}${categoryParam}`
+        `https://api.nicgroup.co/api/blogs?page=${currentPage}${categoryParam}`
       );
       const data = await res.json();
       setBlogs(data.blogs);
