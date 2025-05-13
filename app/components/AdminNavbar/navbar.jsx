@@ -25,7 +25,7 @@ export default function adminNavbar() {
     <div className="flex flex-row px-3 pt-3 md:px-7 md:pt-7 items-center  mb-16  justify-between bg-whitee pb-7">
       <Link href="/admin">
         <img
-          src="/Assets/Images/Logo.png"
+          src="/Assets/Images/logo.png"
           alt="NIC LOGO"
           className="w-[150px]"
         />
