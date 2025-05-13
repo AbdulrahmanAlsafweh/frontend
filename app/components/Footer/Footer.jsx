@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Logo & Socials */}
           <div className="flex flex-col items-center md:items-start gap-5 md:gap-10">
             <img
-              src="/Assets/Images/logo.png"
+              src="/Assets/Images/Logo.png"
               alt="Logo"
               className="w-[200px] md:w-[300px]"
             />

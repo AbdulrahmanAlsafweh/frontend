@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* NIC Logo */}
           <Link href="/">
             <img
-              src="/Assets/Images/logo.png"
+              src="/Assets/Images/Logo.png"
               alt="NIC LOGO"
               className="w-[150px]"
             />
