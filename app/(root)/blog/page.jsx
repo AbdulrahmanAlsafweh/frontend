@@ -21,7 +21,7 @@ export default function BlogPage() {
   // Fetch categories
   useEffect(() => {
     async function fetchCategories() {
-      const res = await fetch(`${apiUrl}/api/blogcategories`);
+      const res = await fetch(`http://api.nicgroup.co/api/blogcategories`);
       const data = await res.json();
       setCategories(data);
     }
