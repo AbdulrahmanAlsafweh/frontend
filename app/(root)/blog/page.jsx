@@ -36,7 +36,7 @@ export default function BlogPage() {
         ? `&category_id=${selectedCategories.join(",")}`
         : "";
       const res = await fetch(
-        `${apiUrl}/api/blogs?page=${currentPage}${categoryParam}`
+        `http://api.nicgroup.co/api/blogs?page=${currentPage}${categoryParam}`
       );
       const data = await res.json();
       setBlogs(data.blogs);
