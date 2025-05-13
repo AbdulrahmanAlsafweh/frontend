@@ -65,7 +65,7 @@ body {
   mask-image: radial-gradient(circle at top right, transparent 40px, white 41px);
 }
 
-@layer utilities {
+/* @layer utilities {
   .clip-left-half {
     clip-path: inset(0 0 0 50%);
   }
@@ -73,7 +73,7 @@ body {
   .clip-right-half {
     clip-path: inset(0 50% 0 0);
   }
-}
+} */
 
 .inverted-radius {
   --r: 20px;
