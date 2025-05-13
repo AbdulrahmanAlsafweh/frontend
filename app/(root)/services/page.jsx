@@ -257,7 +257,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
         {/* White spotlight */}
         <div className="absolute block md:block top-10 right-10 w-16 h-16 md:w-52 md:h-52 bg-white opacity-20 rounded-full blur-3xl"></div>
 
-        <div className="grid grid-cols-[1] md:grid-cols-[10rem_1fr] text-white font-Secondary z-10">
+        {/* <div className="grid grid-cols-[1] md:grid-cols-[10rem_1fr] text-white font-Secondary z-10">
           <p className="text-sm h-fit mb-5 md:mb-0">[Coders Team]</p>
           <div className="text-2xl md:text-4xl flex flex-col gap-6 md:gap-10">
             <p className="font-semibold text-2xl md:text-4xl font-Main">
@@ -282,6 +282,44 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
                   <p className="md:opacity-0 opacity-100 md:group-hover:opacity-100 transition-opacity duration-500 text-sm md:text-base md:ml-10">
                     {service.description}
                   </p>
+                  {index !== generalServices.length - 1 && (
+                    <hr className="border-gray-600" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div> */}
+        <div className="flex flex-col md:flex-row text-white font-Secondary z-10">
+          <p className="text-sm h-fit mb-5 md:mb-0 md:min-w-[10rem]">
+            [Coders Team]
+          </p>
+
+          <div className="text-2xl md:text-4xl flex flex-col gap-6 md:gap-10">
+            <p className="font-semibold text-2xl md:text-4xl font-Main">
+              Programming <br /> Department
+            </p>
+
+            <div className="flex flex-col gap-8 md:gap-16">
+              {generalServices.map((service, index) => (
+                <div
+                  key={index}
+                  className="flex gap-3 md:gap-5 flex-col group w-full md:w-3/4"
+                >
+                  <h2
+                    className="w-fit 
+              md:text-black md:bg-none md:bg-clip-border md:text-current
+              bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent
+              md:group-hover:bg-gradient-to-r md:group-hover:from-secondary md:group-hover:to-primary md:group-hover:bg-clip-text md:group-hover:text-transparent 
+              transition-all duration-500 text-lg md:text-xl"
+                  >
+                    {index + 1} / {service.title}
+                  </h2>
+
+                  <p className="md:opacity-0 opacity-100 md:group-hover:opacity-100 transition-opacity duration-500 text-sm md:text-base md:ml-10">
+                    {service.description}
+                  </p>
+
                   {index !== generalServices.length - 1 && (
                     <hr className="border-gray-600" />
                   )}
