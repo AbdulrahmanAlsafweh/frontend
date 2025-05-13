@@ -16,7 +16,7 @@ export default function BlogDetailsPage({ params }) {
   useEffect(() => {
     // Fetch data using the blogId from URL params
     const fetchBlogData = async () => {
-      const res = await fetch(`http://localhost:8080/api/blogs/${blogId}`);
+      const res = await fetch(`https://api.nicgroup.co/api/blogs/${blogId}`);
       const data = await res.json();
       setBlogData(data);
       setLoading(false);
@@ -46,7 +46,7 @@ export default function BlogDetailsPage({ params }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/recentCategories")
+      .get("https://api.nicgroup.co/api/recentCategories")
       .then((res) => {
         setRecentBlogs(res.data.recentBlogs);
       })

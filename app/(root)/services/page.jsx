@@ -417,7 +417,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
             </defs>
           </svg>
 
-                the old grid
+                {/* the old grid */}
           {/* <div className="grid grid-cols-[1] md:grid-cols-[100px_1fr] gap-6 md:gap-10">
           
             <div>

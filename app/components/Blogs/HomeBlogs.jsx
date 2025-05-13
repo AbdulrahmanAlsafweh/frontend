@@ -13,7 +13,7 @@ export default function HomeBlogs() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/recentCategories") // Update to your actual URL
+      .get("https://api.nicgroup.co/api/recentCategories") // Update to your actual URL
       .then((res) => {
         setBlogs(res.data.recentBlogs);
         setLoading(false);
