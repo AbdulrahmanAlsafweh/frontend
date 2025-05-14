@@ -16,7 +16,8 @@ export default function BlogsPage(){
         const data = await res.json();
         console.log(data);
         if (res.ok) {
-          setBlogs(data); // Set fetched blogs to state
+          setBlogs(data.data);  
+           
         } else {
           setError('Error fetching blogs.');
         }
