@@ -12,7 +12,7 @@ export default function BlogsPage(){
     // Fetch blogs when the component mounts
     const fetchBlogs = async () => {
       try {
-        const res = await fetch(`${apiUrl}/api/blogs`);
+        const res = await fetch(`https://api.nicgroup.co/api/blogs`);
         const data = await res.json();
         console.log(data);
         if (res.ok) {

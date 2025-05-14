@@ -7,7 +7,7 @@ export default function adminNavbar() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const handleLogout = async () => {
-    const response = await fetch(`${apiUrl}/api/logout`, {
+    const response = await fetch(`https://api.nicgroup.co/api/logout`, {
       method: "get",
     });
 

@@ -25,7 +25,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     setSuccess(null);
 
     try {
-      const response = await fetch(`${apiUrl}/api/contact`, {
+      const response = await fetch(`https://api.nicgroup.co/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

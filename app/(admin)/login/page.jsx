@@ -25,7 +25,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     setError("");
 
     try {
-      const response = await axios.post(`${apiUrl}/api/login`, {
+      const response = await axios.post(`https://api.nicgroup.co/api/login`, {
         email,
         password,
       });

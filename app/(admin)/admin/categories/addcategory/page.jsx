@@ -21,13 +21,16 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     }
 
     try {
-      const response = await fetch(`${apiUrl}/api/blogcategories`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ category_name: sanitizedCategoryName }),
-      });
+      const response = await fetch(
+        `https://api.nicgroup.co/api/blogcategories`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ category_name: sanitizedCategoryName }),
+        }
+      );
 
       const data = await response.json();
       if (response.ok) {

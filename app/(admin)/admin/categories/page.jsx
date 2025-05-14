@@ -11,7 +11,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   // Fetch all categories
   useEffect(() => {
     async function fetchCategories() {
-      const res = await fetch(`${apiUrl}/api/blogcategories`);
+      const res = await fetch(`https://api.nicgroup.co/api/blogcategories`);
       const data = await res.json();
       setCategories(data);
     }
@@ -27,7 +27,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   // Handle delete category
   const handleDelete = async (id) => {
-    const response = await fetch(`${apiUrl}/api/blogcategories/${id}`, {
+    const response = await fetch(`https://api.nicgroup.co/api/blogcategories/${id}`, {
       method: "DELETE",
     });
 
@@ -44,7 +44,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     e.preventDefault();
 
 
-    const response = await fetch(`${apiUrl}/api/blogcategories/${editingCategory}`, {
+    const response = await fetch(`https://api.nicgroup.co/api/blogcategories/${editingCategory}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

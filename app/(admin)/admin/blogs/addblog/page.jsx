@@ -14,7 +14,7 @@ export default function AddBlogPage() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   useEffect(() => {
     async function getBlogCategories() {
-      const res = await fetch(`${apiUrl}/api/blogcategories`);
+      const res = await fetch(`https://api.nicgroup.co/api/blogcategories`);
       const data = await res.json();
       setBlogCategories(data);
     }
@@ -37,7 +37,7 @@ export default function AddBlogPage() {
     if (image) formData.append("image", image);
     
     try {
-      const res = await fetch(`${apiUrl}/api/blogs`, {
+      const res = await fetch(`https://api.nicgroup.co/api/blogs`, {
         method: "POST",
         body: formData,
       });

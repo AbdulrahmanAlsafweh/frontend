@@ -15,7 +15,7 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       formData.append("image", image);
     }
 
-    fetch(`${apiUrl}/blogs`, {
+    fetch(`https://api.nicgroup.co/blogs`, {
       method: "POST",
       body: formData, // FormData automatically sets the right headers
     })

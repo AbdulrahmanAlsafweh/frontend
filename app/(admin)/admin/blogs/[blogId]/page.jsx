@@ -10,7 +10,7 @@ const BlogDetail = ({ params }) => {
     const fetchBlog = async () => {
       try {
         const res = await fetch(
-          `${apiUrl}/api/blogs/${params.blogId}`
+          `https://api.nicgroup.co/api/blogs/${params.blogId}`
         );
         const data = await res.json();
 
