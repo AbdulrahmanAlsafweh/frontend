@@ -98,8 +98,8 @@ export default function BlogDetailsPage({ params }) {
                 <p dangerouslySetInnerHTML={{ __html: blogData.content }}></p>
               </div>
             </div>
-            <div className="relative mx-auto lg:sticky lg:top-0">
-              <div className="relative min-h-[450px] w-[320px]">
+            <div className="relative mx-auto ">
+              <div className="relative min-h-[450px] w-[320px] lg:sticky lg:top-0">
                 <div className="inner-curve-blogs bg-white min-h-[450px] w-[320px] pt-20 pb-10 px-7 flex flex-col gap-5 ">
                   {recentBlogs.map((blog) => {
                     return (
