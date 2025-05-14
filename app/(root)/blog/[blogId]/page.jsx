@@ -84,7 +84,7 @@ export default function BlogDetailsPage({ params }) {
               <div className="relative ">
                 <div className="inverted-radius-blogs w-full rounded-[24px] min-h-[450px]">
                   <img
-                    src={blogData.image} // Dynamic image URL
+                    src={`https://api.nicgroup.co/uploads/${blogData.image}`} // Dynamic image URL
                     className="object-cover w-full max-h-[490px] rounded-[24px]"
                     alt={blogData.title}
                   />
@@ -101,30 +101,28 @@ export default function BlogDetailsPage({ params }) {
             <div className="relative mx-auto">
               <div className="relative min-h-[450px] w-[320px]">
                 <div className="inner-curve-blogs bg-white min-h-[450px] w-[320px] pt-20 pb-10 px-7 flex flex-col gap-5 ">
-                  
-                    {recentBlogs.map((blog) => {
-                      return (
-                        <Link href={`/blog/${blog.id}`} key={blog.id}>
-                          <div className="flex gap-5 items-center flex-row hover:scale-105 transition-all duration-75">
-                            <img
-                              src="/Assets/Images/Blogs/blog_placeholder.png"
-                              className="w-[100px] rounded-2xl"
-                              alt={blog?.title}
-                            />
-                            <div className="flex flex-col">
-                              <p className="text-[#8A8A8A] text-[12px] ">
-                                {formatDate(blog?.created_at?.date)}
-                              </p>
+                  {recentBlogs.map((blog) => {
+                    return (
+                      <Link href={`/blog/${blog.id}`} key={blog.id}>
+                        <div className="flex gap-5 items-center flex-row hover:scale-105 transition-all duration-75">
+                          <img
+                            src="/Assets/Images/Blogs/blog_placeholder.png"
+                            className="w-[100px] rounded-2xl"
+                            alt={blog?.title}
+                          />
+                          <div className="flex flex-col">
+                            <p className="text-[#8A8A8A] text-[12px] ">
+                              {formatDate(blog?.created_at?.date)}
+                            </p>
 
-                              <p className="text-blackk text-[12px] font-semibold">
-                                {blog?.title}
-                              </p>
-                            </div>
+                            <p className="text-blackk text-[12px] font-semibold">
+                              {blog?.title}
+                            </p>
                           </div>
-                        </Link>
-                      );
-                    })}
-                   
+                        </div>
+                      </Link>
+                    );
+                  })}
                 </div>
                 <p className="absolute -translate-x-1/2 left-1/2 top-2 text-white font-Raleway text-[20px]">
                   Recent blogs
