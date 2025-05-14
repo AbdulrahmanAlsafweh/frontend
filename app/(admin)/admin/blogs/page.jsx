@@ -15,7 +15,8 @@ export default function BlogsPage() {
         console.log("API Response:", data); // Log the response for debugging
 
         if (res.ok) {
-          setBlogs(data.data ?? []); // Ensure it's an array or default to empty array
+          // Access the 'blogs' array directly from the API response
+          setBlogs(data.blogs ?? []); // Ensure it's an array or default to empty array
         } else {
           setError("Error fetching blogs.");
         }
