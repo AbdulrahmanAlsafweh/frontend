@@ -84,7 +84,7 @@ export default function BlogDetailsPage({ params }) {
               <div className="relative ">
                 <div className="inverted-radius-blogs w-full rounded-[24px] min-h-[450px]">
                   <img
-                    src={`https://api.nicgroup.co/uploads/${blogData.image}`} // Dynamic image URL
+                    src={`https://api.nicgroup.co/${blogData.image}`} // Dynamic image URL
                     className="object-cover w-full max-h-[490px] rounded-[24px]"
                     alt={blogData.title}
                   />

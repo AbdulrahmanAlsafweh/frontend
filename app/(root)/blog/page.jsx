@@ -92,7 +92,7 @@ export default function BlogPage() {
               <Image
                 width={500}
                 height={300}
-                src={`https://api.nicgroup.co/uploads/${blog.image}`}
+                src={`https://api.nicgroup.co/${blog.image}`}
                 className="max-h-[300px] object-cover w-full rounded-[0px]"
                 alt={blog.title === null ? "Blog Image" : blog.title}
                 draggable="false"
